@@ -33,6 +33,7 @@ router.post('/sinhvien', (req,res) =>{
 router.put('/sinhvien/:id', (req,res) =>{
     let checkId = sinhvien.find(c => c.Id == parseInt(req.params.id));
     checkId.Name = req.body.Name
+    checkId.MSSV = req.body.MSSV
     res.send(sinhvien);
 });
 router.delete('/sinhvien/:id', (req,res)=>{
