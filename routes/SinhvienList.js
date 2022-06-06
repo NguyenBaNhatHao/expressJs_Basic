@@ -6,6 +6,11 @@ var sinhvien =[
     {Id:3,Name:'tan',MSSV:'1906821935'},
     {Id:4,Name:'thoai',MSSV:'1906824682'}
 ]
+
+router.get('/', function(req, res){
+    res.render('index', {'sinhvien': sinhvien});
+  })  
+
 router.get('/show', (req,res) =>{
     res.send(sinhvien)
 });
@@ -23,7 +28,7 @@ router.post('/sinhvien', (req,res) =>{
         return;
     }
     const newSinhvien ={
-        id: sinhvien.length+1,
+        Id: sinhvien.length+1,
         Name: req.body.Name,
         MSSV: req.body.MSSV
     }

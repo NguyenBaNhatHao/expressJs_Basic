@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../views/head.ejs'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../views/header.ejs'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>MSSV</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% for(var i=0; i < sinhvien.length; i++) { %>
+          <tr>
+            <td><%= sinhvien[i].Id %></td>
+            <td><%= sinhvien[i].Name %></td>
+            <td><%= sinhvien[i].MSSV %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+  </div>
+</main>
+
+<footer>
+  <%- include('../views/footer.ejs'); %>
+</footer>
+
+</body>
+</html>
